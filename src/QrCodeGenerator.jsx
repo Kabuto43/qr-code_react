@@ -1,29 +1,39 @@
-import { useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
+import { useState } from 'react'
 
 import './qrCodeGenerator.css'
 
-export const QrCodeGenerator = () => {
-  const [value, setValue] = useState("hi")
-  const [result, setResult] = useState('')
+export const QRCodeGenerator = () => {
+    const [value, setValue] = useState("")
+    const [result, setResult] = useState('')
 
-	const onClickHandler = (event) => {
-		setResult(value)
-    setValue('')
-	}
+    const onClickHandler = () => {
+        setResult(value)
+        setValue('')
+    }
 
-  const onChangeHandler = (event) => {
-    setValue(event.target.value)
-    setResult('')
-  }
+    const onChangeHandler = (event) => {
+        setValue(event.target.value)
+        setResult('')
+    }
 
-	return (
-		<div>
-      {result !== '' && (
-        <QRCodeSVG value={result}/>
-      )}
-			<input className='input' type="text" value={value} onChange={onChangeHandler}/>
-			<button type="button" onClick={onClickHandler}>Generate QRCode</button>
-		</div>
-	)
+    return (
+        <div className="container">
+            <input
+                className="input" type="text" 
+                value={value} onChange={onChangeHandler}
+                placeholder="Enter text..."
+            />
+
+            <button className="button" type="button" onClick={onClickHandler}>
+                Generate QRCode
+            </button>
+
+            {result !== '' && (
+                <div className="qrWrapper">
+                    <QRCodeSVG value={result} size={200}/>
+                </div>
+            )}
+        </div>
+    )
 }

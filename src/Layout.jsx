@@ -1,7 +1,7 @@
-import { QrCodeGenerator } from './QrCodeGenerator'
+import { QRCodeGenerator } from './QRCodeGenerator'
 
 export const Layout = () => {
 	return (
-		<QrCodeGenerator/>
+		<QRCodeGenerator/>
 	)
 }
