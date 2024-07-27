@@ -1,7 +1,7 @@
 import { QRCodeSVG } from 'qrcode.react'
 import { useState } from 'react'
 
-import './qrCodeGenerator.css'
+import s from './qrCodeGenerator.module.css'
 
 export const QRCodeGenerator = () => {
     const [value, setValue] = useState("")
@@ -18,19 +18,19 @@ export const QRCodeGenerator = () => {
     }
 
     return (
-        <div className="container">
+        <div className={s.container}>
             <input
-                className="input" type="text" 
+                className={s.input} type="text" 
                 value={value} onChange={onChangeHandler}
                 placeholder="Enter text..."
             />
 
-            <button className="button" type="button" onClick={onClickHandler}>
+            <button className={s.button} type="button" onClick={onClickHandler}>
                 Generate QRCode
             </button>
 
             {result !== '' && (
-                <div className="qrWrapper">
+                <div className={s.qrWrapper}>
                     <QRCodeSVG value={result} size={200}/>
                 </div>
             )}
