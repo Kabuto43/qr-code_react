@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
-import { Navigation } from "./Navigation"
-import { QRCodeGenerator } from './QRCodeGenerator'
-import { QRCodeScanner} from './QRCodeScanner'
+import { Navigation } from "./Components/Navigation/Navigation"
+import { QRCodeGenerator } from './Components/Generate/QRCodeGenerator'
+import { QRCodeScanner} from './Components/Scan/QRCodeScanner'
 
 export const Layout = () => {
 	return (

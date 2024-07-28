@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
+import s from './Navigation.module.css'
 
 export const Navigation = () => {
 	return (
-		<nav style={{display: 'flex', flexDirection: 'column'}}>
+		<nav className={s.container}>
 			<Link to="/generate">Generate QR Code</Link>
 			<Link to="/scan">Scan QR Code</Link>
 			<Link to="/">History of scanned codes</Link>
