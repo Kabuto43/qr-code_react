@@ -4,7 +4,7 @@ import s from './ScanHistroy.module.css'
 
 export const ScanHistory = () => {
 	const data = JSON.parse(localStorage.getItem(SCAN_DATA) || '[]')
-	console.log(data)
+
 	return (
 		<div className={s.container}>
 			{data.map((text) => (
